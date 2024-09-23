@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DavAgro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #5a7d5b;
+        }
+
+        header {
+            background-color: #0c380d;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1b3708;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #bbc2b8;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f3c24;
+            font-size: 60px;
+        }
+
+        
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #243d0d;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .c2 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #99a989;
+            border-radius: 30px;
+            border: 1.5px solid #0a0a0a;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        button {
+           
+            width: 30%;
+            padding: 10px 20px;
+            background-color: #0c430e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #586659;
+        }
+        .stylefoot{
+            font-size: large;
+        }
+
+        #converted-result{
+            font-size: 50px;
+        }
+        #result{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="contactus.html" style="float:right">Contact US</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="c2">
+            <h1>Heat Load Result</h1>
+            <p id="result"></p>
+            <p id="converted-result"></p>
+
+            <!-- Button to convert BTU/hr to kW -->
+            <button style="align-self: center;" onclick="convertToKW()">Convert to kW</button>
+
+            <script>
+                // Function to get URL parameters
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+
+                // Get the heat load from the URL and display it
+                const totalHeatLoad = getQueryParam('totalHeatLoad');
+                document.getElementById('result').innerText = `Total Heat Load: ${totalHeatLoad} BTU/hr`;
+
+                // Function to convert BTU/hr to kW
+                function convertToKW() {
+                    const btu = parseFloat(totalHeatLoad);
+                    if (!isNaN(btu)) {
+                        const kw = btu * 0.00029307107;
+                        document.getElementById('converted-result').innerText = `Total Heat Load: ${kw.toFixed(2)} kW`;
+                    } else {
+                        document.getElementById('converted-result').innerText = 'Invalid input';
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Contact Details</h3>
+                <div class="stylefoot">
+                <p>Office - Plot No -8, Village - Purva, near Sharda Mandir, Barela, Jabalpur.</p>
+                <p>Branch Office -51/233, Shantiniwas, Bhairavnagar, Vishrantwadi, Pune - 15.</p>
+                <p>e-mail :- davagrojbp21@gmail.com,</p>
+                <p>Phone :- 9990766009,</p>
+                <p>davagro@gmail.com, Mobile - 9922964239</p>
+            </div>
+            </div>
+            <div>
+                <h3>Links</h3>
+                <a href="index.html" style="color: #ddd;">Home</a><br><br>
+                <a href="calculator.html"style="color: #ddd;">Calculator</a><br><br>
+                <a href="aboutus.html"style="color: #ddd;">About Us</a><br><br>
+                <a href="faqs.html"style="color: #ddd;">FAQs</a><br><br>
+                <a href="contactus.html"style="color: #ddd;">Contact US</a><br><br>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAV Agro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: white;
+            
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgb(15, 61, 3); /* Semi-transparent dark green */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 50px; 
+            background-image: url("image.png"); /* Replace with your image filename */
+            background-size: cover; /* Or use 'contain' if you want to ensure the whole image is visible */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            min-height: 100vh; /* Ensure the background covers the entire viewport height */
+        }
+
+        .content-wrapper {
+            /* Semi-transparent white background for content */
+            padding: 30px;
+            border-radius: 10px; 
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: black; /* Text color for better contrast on light background */
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            color: aliceblue;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: rgb(252, 251, 250);
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        button{
+            background-color: #76a268;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from the button link */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">DAV AGRO</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="faqs.html">FAQS</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="content-wrapper"> <div class="hero">
+                <div class="hero-text">
+                    <h1>DAV Agro</h1>
+                    <p>At DAV Agro, we specialize in the sustainable cultivation of a diverse range of mushrooms. Founded in [Year], our mission is to provide high-quality, nutritious mushrooms while promoting environmentally friendly farming practices. Our state-of-the-art facilities and dedicated team ensure that every mushroom we produce meets the highest standards of quality and sustainability.</p>
+                    
+                    <button><a href="calculator.html" style="color: rgb(4, 4, 4); font-size: large;  text-decoration: none;" >Go to Heat Room Calculator</a> </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
